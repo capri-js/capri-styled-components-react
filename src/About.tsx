@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
+import { A, H1, Main, Section } from "./styled";
 
 export function About() {
   return (
-    <main>
-      <h1>This page is completely static.</h1>
-      <section>
+    <Main>
+      <H1>This page is completely static.</H1>
+      <Section>
         An since it does not contain any interactive islands, no JavaScript is
         shipped to the browser.
-      </section>
-      <Link to="/">Home</Link>
-    </main>
+      </Section>
+      <A as={Link} to="/">
+        Home
+      </A>
+    </Main>
   );
 }

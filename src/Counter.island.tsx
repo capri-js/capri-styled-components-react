@@ -1,4 +1,6 @@
 import { useState } from "react";
+import styled from "styled-components";
+import { Button } from "./styled";
 
 type Props = {
   start?: number;
@@ -7,10 +9,16 @@ type Props = {
 export default function Counter({ start = 0 }: Props) {
   const [counter, setCounter] = useState(start);
   return (
-    <div className="counter" data-testid="counter">
-      <button onClick={() => setCounter((c) => c - 1)}>-</button>
+    <Root>
+      <Button onClick={() => setCounter((c) => c - 1)}>-</Button>
       <span>{counter}</span>
-      <button onClick={() => setCounter((c) => c + 1)}>+</button>
-    </div>
+      <Button onClick={() => setCounter((c) => c + 1)}>+</Button>
+    </Root>
   );
 }
+
+const Root = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+`;
